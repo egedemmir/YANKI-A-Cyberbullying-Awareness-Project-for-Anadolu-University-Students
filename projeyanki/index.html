@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>YANKI | Siber Zorbalıkla Mücadele</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">
+    <img src="projelogo.png" alt="YANKI Logo">
+    <div>
+      <span>YANKI</span>
+      <div id="user-badge-status" class="user-badge" style="display: none;">🛡️ Dijital Muhafız</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <button onclick="showPage('home')">Ana Sayfa</button>
+    <button onclick="showPage('projects')">Projelerimiz</button>
+    <button onclick="showPage('events')">Etkinliklerimiz</button>
+  </div>
+</div>
+
+<div id="home" class="page active">
+  <h1>YANKI: Dijitalde bir söz, gerçekte bir yankı.</h1>
+  <p>Daha güvenli bir dijital dünya için buradayız. Aşağıdaki panellerden bilgi ve destek alabilirsin.</p>
+  
+  <div class="card-grid card-grid-two">
+    <div class="card" onclick="openModal('bilgilendirme')">📘 Bilgilendirme ve Farkındalık</div>
+    <div class="card" onclick="openModal('destek')">🤝 Acil Destek Kanalları</div>
+  </div>
+
+  <div class="stats-container">
+    <div class="stat-item">
+      <h3 class="stat-number" data-target="1500">0</h3>
+      <p>Ulaşılan Genç</p>
+    </div>
+    <div class="stat-item">
+      <h3 class="stat-number" data-target="3">0</h3>
+      <p>Eskişehir Okul Semineri</p>
+    </div>
+    <div class="stat-item">
+      <h3 class="stat-number" data-target="340">0</h3>
+      <p>Çözülen Vaka Bilgilendirmesi</p>
+    </div>
+  </div>
+</div>
+
+<div id="projects" class="page">
+  <h1>PROJELERİMİZ</h1>
+  <p>Siber zorbalığı bitirmek ve farkındalık yaratmak için geliştirdiğimiz aktif çalışmalarımız:</p>
+  <div class="card-grid">
+    <div class="card">
+      <h3>🏫 Okul Seminerleri</h3>
+      <p style="font-size:13px; color:#94a3b8; margin-top:8px;">Eskişehir genelindeki liselerde siber zorbalık ve siber suçlar hukuku üzerine aktif eğitimler düzenliyoruz.</p>
+    </div>
+    <div class="card">
+      <h3>🤖 YANKI'YA SOR</h3>
+      <p style="font-size:13px; color:#94a3b8; margin-top:8px;">Yapay zeka tabanlı widget'ımız ile siber zorbalığa uğrayan gençlere anında hukuki ve psikolojik yönlendirme yapıyoruz.</p>
+    </div>
+    <div class="card" onclick="window.open('https://www.instagram.com/yanki.2026', '_blank')">
+      <h3>📸 Instagram Topluluğumuz</h3>
+      <p style="font-size:13px; color:#38bdf8; margin-top:8px;">@yanki.2026<br><span style="color:#94a3b8;">Bizi takip et, dijital farkındalık akımına katıl!</span></p>
+    </div>
+  </div>
+</div>
+
+<div id="events" class="page">
+  <h1>Etkinliklerimiz</h1>
+  <p>Gerçekleştirdiğimiz etkinliklerin detaylarına ve fotoğraflarına üzerine tıklayarak ulaşabilirsiniz.</p>
+  <div class="card-grid">
+    
+    <div class="card event-card" onclick="toggleEventGallery(this, event)">
+      <div class="event-header-row">
+        <div class="event-title">21 Nisan – Doç. Dr. Bircan ERGÜN ile Seminer</div>
+        <span class="event-arrow">▼</span>
+      </div>
+      <div class="event-gallery">
+        <img src="bircan.jpg" alt="Bircan Ergün Seminer " onclick="openLightbox(this, event)">
+        <img src="bircan1.jpg" alt="Bircan Ergün Seminer " onclick="openLightbox(this, event)">
+        <img src="bircan2.jpg" alt="Bircan Ergün Seminer " onclick="openLightbox(this, event)">
+      </div>
+    </div>
+
+    <div class="card event-card" onclick="toggleEventGallery(this, event)">
+      <div class="event-header-row">
+        <div class="event-title">30 Nisan – Haybeden Project</div>
+        <span class="event-arrow">▼</span>
+      </div>
+      <div class="event-gallery">
+        <img src="haybeden.jpg" alt="Haybeden Project " onclick="openLightbox(this, event)">
+        <img src="haybeden2.jpg" alt="Haybeden Project " onclick="openLightbox(this, event)">
+        <img src="haybeden3.jpg" alt="Haybeden Project " onclick="openLightbox(this, event)">
+      </div>
+    </div>
+
+    <div class="card event-card" onclick="toggleEventGallery(this, event)">
+      <div class="event-header-row">
+        <div class="event-title">7 Mayıs – Av. Murat Osman KANDIR ile Seminer</div>
+        <span class="event-arrow">▼</span>
+      </div>
+      <div class="event-gallery">
+        <img src="murat2.jpg" alt="Murat Osman Kandır " onclick="openLightbox(this, event)">
+        <img src="murat3.jpg" alt="Murat Osman Kandır " onclick="openLightbox(this, event)">
+        <img src="murat4.jpg" alt="Murat Osman Kandır " onclick="openLightbox(this, event)">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="modal-bilgilendirme" class="modal-overlay" onclick="closeModal('bilgilendirme')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal('bilgilendirme')">✕</button>
+    <h2>📘 Siber Zorbalık Nedir?</h2>
+    <p>Siber zorbalık; internet, sosyal medya, mesajlaşma uygulamaları veya oyun platformları aracılığıyla bir kişiye yönelik kasıtlı, tekrarlayan ve zarar verici davranışlardır.</p>
+    
+    <h3>⚠️ Siber Zorbalık Türleri</h3>
+    <ul>
+      <li><strong>Taciz:</strong> Sürekli rahatsız edici mesajlar veya yorumlar göndermek.</li>
+      <li><strong>Kimlik hırsızlığı:</strong> Birinin hesabını ele geçirerek onun adına paylaşım yapmak.</li>
+      <li><strong>Dışlama:</strong> Kişiyi kasıtlı olarak çevrimiçi gruplardan veya sohbetlerden uzak tutmak.</li>
+      <li><strong>İfşa etme:</strong> Birinin özel bilgilerini veya fotoğraflarını izinsiz paylaşmak.</li>
+    </ul>
+
+    <h3>🛡️ Ne Yapmalısın?</h3>
+    <ul>
+      <li>Mesaj ve paylaşımların ekran görüntüsünü al, kanıtları sakla.</li>
+      <li>Zorbalık yapan kişiyi engelle ve bildir.</li>
+      <li>Cevap verme — bu çoğu zaman zorbalığı büyütür.</li>
+    </ul>
+    
+    <div class="share-box">
+      <p style="font-size:12px; color:#a1a1aa; margin-bottom: 8px;">Bu bilgiyi arkadaşlarınla paylaşarak farkındalık yarat:</p>
+      <button class="btn-share" onclick="window.open('https://twitter.com/intent/tweet?text=Siber%20zorbalığa%20karşı%20yalnız%20değilsiniz.%20Farkında%20ol,%20dur de!', '_blank')">X'te Paylaş</button>
+    </div>
+  </div>
+</div>
+
+<div id="modal-destek" class="modal-overlay" onclick="closeModal('destek')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal('destek')">✕</button>
+    <h2>🤝 Siber Zorbalıkta Destek Kaynakları</h2>
+    <p>Siber zorbalığa maruz kalıyorsan yalnız değilsin. Aşağıdaki kurum ve kişilerden destek alabilirsin:</p>
+    <h3>🏫 Okul Yönetimi ve Rehberlik</h3>
+    <p>Rehber öğretmenine veya okul müdürüne durumu anlat. Okul, zorbalığa karışan öğrencilere yönelik idari önlem almakla yükümlüdür.</p>
+    <h3>📞 ALO 183 – Aile ve Sosyal Hizmetler Hattı</h3>
+    <p>Türkiye'de 7/24 ücretsiz aranabilir. Çocuk ve gençlere yönelik psikolojik destek ve yönlendirme sağlar.</p>
+    <h3>🌐 BTK – Bilgi Teknolojileri ve İletişim Kurumu</h3>
+    <p>ihbar.gov.tr adresi üzerinden çevrimiçi taciz ve zararlı içerikleri şikâyet edebilirsin.</p>
+  </div>
+</div>
+
+<div id="survey" class="survey-overlay">
+  <div class="survey-box">
+    <div id="survey-content-wrapper">
+      <h2>🧠 Sınır Algısı Mini Testi</h2>
+      <p id="surveyQuestion"></p>
+      <div class="btn-group">
+        <button class="btn-joke"   onclick="answerSurvey('Şaka')">Şaka</button>
+        <button class="btn-bully"  onclick="answerSurvey('Zorbalık')">Zorbalık</button>
+        <button class="btn-unsure" onclick="answerSurvey('Emin değilim')">Emin değilim</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="ai-toggle" onclick="toggleChat()">🤖</button>
+<div class="ai-widget">
+  <div class="ai-header">🤖 YANKI'YA SOR</div>
+  <div id="ai-response" class="chat-container">
+    <div class="chat-bubble bot-bubble">Merhaba! Siber zorbalıkla ilgili aklına takılan her şeyi sorabilirsin. Başlamak için kutuya yazabilirsin. ✨</div>
+  </div>
+  <div class="chat-input-area">
+    <input id="ai-input" placeholder="Soru sor (Örn: Ne yapmalıyım?)...">
+    <button onclick="askAI()">Gönder</button>
+  </div>
+</div>
+
+<div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img" alt="Büyütülmüş Görsel">
+  <div id="lightbox-caption"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
