@@ -1,3 +1,1 @@
-# YANKI-A-Cyberbullying-Awareness-Project-for-Anadolu-University-Students
-YANKI is a cyberbullying awareness platform developed for Anadolu University students. The project includes educational content, interactive activities, and an AI-powered chatbot. It aims to raise awareness and guide users toward safer internet practices.
-YANKI – A Cyberbullying Awareness Project for Anadolu University Students
+YANKI is a cyberbullying awareness project developed for Anadolu University students. It features educational content, interactive activities, and an AI-powered chatbot. Visit the live website to explore the project: https://yankianadolu.github.io/proje/
